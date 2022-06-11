@@ -11,7 +11,4 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/posts', require('./routes/postRoutes'))
 
-//Overwrites the default express error handler
-app.use(errorHandler)
-
 app.listen(port, () => console.log(`Server started on port ${port}`))
