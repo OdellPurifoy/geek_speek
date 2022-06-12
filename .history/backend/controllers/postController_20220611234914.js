@@ -56,9 +56,9 @@ const deletePost = asyncHandler(async (req, res) => {
         throw new Error('Post could not be found and deleted')
     }
 
-    await post.remove()
+     await post.remove
 
-    res.status(200).json({ id: req.params.id })
+    res.status(200).json(deletedPost)
 })
 
 module.exports = {
