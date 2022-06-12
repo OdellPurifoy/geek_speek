@@ -22,6 +22,7 @@ const createPost = asyncHandler(async (req, res) => {
     }
 
     const post = await Post.create({
+        title: req.body.title,
         text: req.body.text
     })
 
@@ -32,33 +33,14 @@ const createPost = asyncHandler(async (req, res) => {
 // @route PUT /api/posts/:id
 // @access Private
 const updatePost = asyncHandler(async (req, res) => {
-    const post = await Post.findById(req.params.id)
-
-    if(!post) {
-        res.status(400)
-        throw new Error('Post not found')
-    }
-
-    // Tries to find and update the post - if it doesn't exist it'll create a new one.
-    const updatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true } )
-
-    res.status(200).json(updatedPost)
+    res.status(200).json({ message : `Update a post ${req.params.id}`})
 })
 
 // @desc Delete a post
 // @route DELETE /api/posts/:id
 // @access Private
 const deletePost = asyncHandler(async (req, res) => {
-    const post = await Post.findById(req.params.id)
-
-    if(!post) {
-        res.status(400)
-        throw new Error('Post could not be found and deleted')
-    }
-
-    await post.remove()
-
-    res.status(200).json({ id: req.params.id })
+    res.status(200).json({ message : `Delete a post ${req.params.id}`})
 })
 
 module.exports = {
