@@ -22,8 +22,7 @@ const createPost = asyncHandler(async (req, res) => {
     }
 
     const post = await Post.create({
-        text: req.body.text,
-        user: req.user.id
+        text: req.body.text
     })
 
     res.status(200).json(post)
