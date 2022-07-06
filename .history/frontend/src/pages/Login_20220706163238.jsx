@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
-import { FaUser } from "react-icons/fa";
+import { FaSignInAlt } from "react-icons/fa";
 
 
-function Register() {
+function Login() {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     password: '',
-    password_confirmation: '',
   })
 
-  const { name, email, password, password_confirmation } = formData
+  const { email, password } = formData
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -27,7 +25,7 @@ function Register() {
     <>
       <section className="heading">
         <h1>
-          <FaUser /> Register
+          <FaSignInAlt /> Sign In
         </h1>
         <p>Please create an account</p>
       </section>
@@ -55,4 +53,4 @@ function Register() {
   )
 }
 
-export default Register
+export default Login

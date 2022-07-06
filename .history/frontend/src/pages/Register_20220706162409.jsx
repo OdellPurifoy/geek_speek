@@ -12,16 +12,7 @@ function Register() {
 
   const { name, email, password, password_confirmation } = formData
 
-  const onChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  const onSubmit = (e) => {
-    e.preventDefault()
-  }
+  const onChange = () => {}
 
   return (
     <>
@@ -33,7 +24,7 @@ function Register() {
       </section>
 
       <section className="form">
-        <form onSubmit={onSubmit}>
+        <form>
           <div className="form-group">
             <input type="text" className="form-control" id="name" name="name" value={name} placeholder="Enter your name" onChange={onChange}/>
           </div>

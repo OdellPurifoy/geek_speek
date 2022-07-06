@@ -13,9 +13,9 @@ function Register() {
   const { name, email, password, password_confirmation } = formData
 
   const onChange = (e) => {
-    setFormData((prevState) => ({
+    setFormData((orevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }))
   }
 
